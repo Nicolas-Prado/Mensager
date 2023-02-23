@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Cadastro de usuario</title>
+        <script src="https://kit.fontawesome.com/cfe3792dd2.js" crossorigin="anonymous"></script>
+        <style>
+            .caixa{
+                position: absolute;
+                top: 35%;
+                left: 35%;
+                width: 30%;
+                height: 30%;
+                border: 1px solid;
+                padding: 10px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:menubar>
+                <p:menuitem value="Cadastro" icon="fas fa-universal-access" ajax="false" action="#{telaMensagemBean.gocadastro()}"/>
+                <p:menuitem value="Editar" icon="fas fa-user-edit" ajax="false" action="#{telaMensagemBean.goteleditar()}"/>
+                <p:menuitem value="Sair" icon="fas fa-at" ajax="false" action="#{telaMensagemBean.goindex()}"/>
+            </p:menubar>
+        </h:form>
+        <div class="caixa">
+            <h:form>
+                <center><p:outputLabel value="Login" for="itLogin"/></center>
+                <center><p:inputText id="itLogin" value="#{telaMensagemBean.usuario.login}"/><br/></center>
+                <center><p:outputLabel value="Nome" for="itNome"/></center>
+                <center><p:inputText id="itNome" value="#{telaMensagemBean.usuario.nome}"/><br/></center>
+                <center><p:outputLabel value="Senha" for="itSenha"/></center>
+                <center><p:inputText type="password" id="itSenha" value="#{telaMensagemBean.usuario.senha}"/><br/></center> <br/>
+                <center><p:commandButton value="Cadastro" id="bCadastro" icon="ui-icon-arrow-1-ne" ajax="false" action="#{telaMensagemBean.cadastrar()}" /></center>
+            </h:form>
+        </div>
+    </h:body>
+</html> 

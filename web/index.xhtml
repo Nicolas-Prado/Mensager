@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Login</title>
+        <script src="https://kit.fontawesome.com/cfe3792dd2.js" crossorigin="anonymous"></script>
+        <style>
+            .caixa{
+                position: absolute;
+                top: 35%;
+                left: 35%;
+                width: 30%;
+                height: 30%;
+                border: 1px solid;
+                padding: 10px;
+            }
+        </style>
+        <script src="https://kit.fontawesome.com/cfe3792dd2.js" crossorigin="anonymous"></script>
+    </h:head>
+    <h:body>
+        <div class="caixa">
+            <h:form>
+                <center><p:outputLabel value="Login" for="itLogin"/></center>
+                <center><p:inputText id="itLogin" value="#{telaMensagemBean.usuario.login}"/><br/></center>
+                <center><p:outputLabel value="Senha" for="itSenha"/><password></password></center>
+                <center><p:inputText type="password" id="itSenha" value="#{telaMensagemBean.usuario.senha}"/><br/></center> <br/>
+                <center><p:commandButton style="width: 30%" id="bLogin" value="Logar" icon="fas fa-sign-in-alt" ajax="false" action="#{telaMensagemBean.login()}"/></center>
+            </h:form>
+        </div>
+    </h:body>
+</html> 
